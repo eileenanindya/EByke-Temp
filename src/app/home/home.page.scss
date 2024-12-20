@@ -25,3 +25,20 @@
 #container a {
   text-decoration: none;
 }
+
+.profile{
+  display: flex;
+  align-items: center;
+}
+
+.home-icons{
+  display: flex;
+  justify-content:space-evenly;
+  width: 100%;
+}
+
+.home-icons img{
+  width: 100%; /* Lebar gambar 100% dari elemen induknya */
+  height: auto; /* Menyesuaikan tinggi gambar secara proporsional */
+  object-fit: cover;
+}
