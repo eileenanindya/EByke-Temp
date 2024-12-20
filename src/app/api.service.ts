@@ -24,4 +24,14 @@ export class ApiService {
       { headers: new HttpHeaders({'Authorization': 'Bearer ' + this.token})}
     )
   }
+
+  // Ambil data profil user
+  getUserProfile() {
+    return this.get('profile');
+  }
+
+  // Update data profil user
+  updateUserProfile(data: any) {
+    return this.post('profile/update', data);
+  }
 }

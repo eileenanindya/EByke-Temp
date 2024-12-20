@@ -63,12 +63,12 @@
 
     <!-- charge map card -->
     <div class="card-map">
-      <div class="max-w-sm p-6 bg-cyan-300 border border-gray-200 rounded-lg shadow dark:bg-cyan-300 dark:border-gray-700">
+      <div class="max-w-sm p-6 bg-cyan-400 border border-gray-200 rounded-lg shadow dark:bg-cyan-400 dark:border-gray-700">
         <a href="#">
             <h5 class="mb-2 text-2xl font-semibold tracking-tight text-white dark:text-white">Not sure where to charge?</h5>
         </a>
         <p class="mb-3 font-normal text-white dark:text-gray-400">Open our battery map to find the nearest charging station and keep your ride going!</p>
-        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        <a href="#" class="inline-flex font-medium items-center text-cyan-600 hover:underline">
             Read more
             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -115,7 +115,7 @@
           <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
 
-        <button data-tooltip-target="tooltip-profile" type="button" class="inline-flex flex-col items-center justify-center px-5 rounded-e-full hover:bg-gray-50 dark:hover:bg-gray-800 group">
+        <button data-tooltip-target="tooltip-profile" [routerLink]="['/profile']" type="button" class="inline-flex flex-col items-center justify-center px-5 rounded-e-full hover:bg-gray-50 dark:hover:bg-gray-800 group">
           <svg class="w-6 h-7 mb-1 text-cyan-400 dark:text-gray-400 group-hover:text-cyan-500 dark:group-hover:text-cyan-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z" clip-rule="evenodd"/>
           </svg>

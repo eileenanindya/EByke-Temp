@@ -1,0 +1,35 @@
+<ion-content [fullscreen]="true">
+    <button type="button" [routerLink]="['/home']" class="p-4 pt-8 inline-flex font-medium items-center text-gray-800 hover:underline">
+    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
+    </svg>
+    Profile
+    </button>
+
+    <div class="flex flex-col gap-4 p-4 pb-24">
+      <div class="profile">
+        <img class="w-16 h-16 rounded-full object-fill" src="../../assets/icon/profilepic.png" alt="">
+        <div class="font-medium dark:text-white ml-2 w-[70%]">
+          <h1>{{ data.name || 'Not set' }}</h1>  
+        </div>
+        <div class="edit-icon">
+          <a [routerLink]="['/editprofile']"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M14 4.182A4.136 4.136 0 0 1 16.9 3c1.087 0 2.13.425 2.899 1.182A4.01 4.01 0 0 1 21 7.037c0 1.068-.43 2.092-1.194 2.849L18.5 11.214l-5.8-5.71 1.287-1.31.012-.012Zm-2.717 2.763L6.186 12.13l2.175 2.141 5.063-5.218-2.141-2.108Zm-6.25 6.886-1.98 5.849a.992.992 0 0 0 .245 1.026 1.03 1.03 0 0 0 1.043.242L10.282 19l-5.25-5.168Zm6.954 4.01 5.096-5.186-2.218-2.183-5.063 5.218 2.185 2.15Z" clip-rule="evenodd"/>
+          </svg></a>
+          
+        </div>        
+      </div>
+      <div class="relative z-0 w-full mb-5 group">
+        <div class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400  -translate-y-6 scale-75 top-3 -z-10 origin-[0]">Email address</div>
+        <div class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600">{{ data.email || 'Not set' }}</div>
+      </div>
+      <div class="relative z-0 w-full mb-5 group">
+        <div class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400  -translate-y-6 scale-75 top-3 -z-10 origin-[0]">Phone Number</div>
+        <div class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600">{{ data.phonenum || 'Not set' }}</div>
+      </div>
+      <div class="relative z-0 w-full group">
+        <div class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400  -translate-y-6 scale-75 top-3 -z-10 origin-[0]">Address</div>
+        <div class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600">{{ data.address || 'Not set' }}</div>
+      </div>
+    </div>
+</ion-content>
