@@ -38,7 +38,15 @@ const routes: Routes = [
   {
     path: 'mapsbaterai',
     loadChildren: () => import('./mapsbaterai/mapsbaterai.module').then( m => m.MapsbateraiPageModule)
+  },  {
+    path: 'afterpayment',
+    loadChildren: () => import('./afterpayment/afterpayment.module').then( m => m.AfterpaymentPageModule)
   },
+  {
+    path: 'historytransaksi',
+    loadChildren: () => import('./historytransaksi/historytransaksi.module').then( m => m.HistorytransaksiPageModule)
+  },
+
 ];
 
 @NgModule({
