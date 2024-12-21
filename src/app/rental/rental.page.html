@@ -1,117 +1,76 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rent E-Bike</title>
-  <!-- Ionic Framework CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
-  <!-- Custom Styles -->
-  <style>
-    .header-title {
-      text-align: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #007bff;
-    }
+<ion-content class="ion-padding">
+  <!-- Back Button -->
+  <button type="button" class="p-4 inline-flex font-medium items-center text-gray-800 hover:underline" style="margin-bottom: 1rem;">
+    <svg class="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
+    </svg>
+    Back
+  </button>
 
-    .section-title {
-      font-weight: bold;
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-    }
+  <!-- Header Title -->
+  <div style="
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    color: #22d3ee; 
+    margin-bottom: 1.5rem;">
+    E-Bike
+  </div>
 
-    .form-label {
-      margin-bottom: 0.3rem;
-      font-weight: 500;
-    }
+  <!-- Booking Form Section -->
+  <div style="margin-bottom: 2rem;">
+    <div style="font-weight: bold; margin-bottom: 1rem;">Booking Form</div>
 
-    .form-input {
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      padding: 0.5rem;
-      width: 100%;
-    }
+    <ion-item>
+      <ion-label position="stacked" style="color: #555;">Start Date</ion-label>
+      <ion-input type="date" placeholder="Select date"></ion-input>
+    </ion-item>
 
-    .divider {
-      border-top: 1px solid #ddd;
-      margin: 1.5rem 0;
-    }
+    <ion-item>
+      <ion-label position="stacked" style="color: #555;">End Date</ion-label>
+      <ion-input type="date" placeholder="Select date"></ion-input>
+    </ion-item>
 
-    .book-btn {
-      background-color: #ffeb3b;
-      color: #007bff;
-      font-weight: bold;
-      width: 100%;
-      padding: 0.8rem;
-      border-radius: 5px;
-      border: none;
-      cursor: pointer;
-    }
+    <ion-item>
+      <ion-label position="stacked" style="color: #555;">Start Time</ion-label>
+      <ion-input type="time" placeholder="Select time"></ion-input>
+    </ion-item>
 
-    .book-btn:hover {
-      background-color: #ffe033;
-    }
-  </style>
-</head>
-<body>
-  <ion-app>
-    <ion-header>
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-back-button></ion-back-button>
-        </ion-buttons>
-        <ion-title>Rent</ion-title>
-      </ion-toolbar>
-    </ion-header>
+    <ion-item>
+      <ion-label position="stacked" style="color: #555;">End Time</ion-label>
+      <ion-input type="time" placeholder="Select time"></ion-input>
+    </ion-item>
+  </div>
 
-    <ion-content class="ion-padding">
-      <div class="header-title">E-Bike</div>
+  <!-- Divider -->
+  <hr style="border-top: 1px solid #ddd; margin: 1.5rem 0;">
 
-      <form class="form">
-        <!-- Booking Form Section -->
-        <div>
-          <div class="section-title">Booking Form</div>
-          <label class="form-label">Start Date</label>
-          <input type="date" class="form-input">
+  <!-- Pick Up Details Section -->
+  <div>
+    <div style="font-weight: bold; margin-bottom: 1rem;">Pick Up Details</div>
 
-          <label class="form-label">End Date</label>
-          <input type="date" class="form-input">
+    <ion-item>
+      <ion-label position="stacked" style="color: #555;">Pick Up Time</ion-label>
+      <ion-input type="time" placeholder="Select time"></ion-input>
+    </ion-item>
 
-          <label class="form-label">Start Time</label>
-          <input type="time" class="form-input">
+    <ion-item>
+      <ion-label position="stacked" style="color: #555;">Pick Up Location</ion-label>
+      <ion-select placeholder="Select location">
+        <ion-select-option value="location1">Location 1</ion-select-option>
+        <ion-select-option value="location2">Location 2</ion-select-option>
+        <ion-select-option value="location3">Location 3</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
 
-          <label class="form-label">End Time</label>
-          <input type="time" class="form-input">
-        </div>
-
-        <!-- Divider -->
-        <div class="divider"></div>
-
-        <!-- Pick Up Details Section -->
-        <div>
-          <div class="section-title">Pick Up Details</div>
-          <label class="form-label">Pick Up Time</label>
-          <input type="time" class="form-input">
-
-          <label class="form-label">Pick Up Location</label>
-          <select class="form-input">
-            <option value="">Select location</option>
-            <option value="location1">Location 1</option>
-            <option value="location2">Location 2</option>
-            <option value="location3">Location 3</option>
-          </select>
-        </div>
-
-        <!-- Submit Button -->
-        <button type="submit" class="book-btn">Book Now</button>
-      </form>
-    </ion-content>
-  </ion-app>
-
-  <!-- Ionic Framework JS -->
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
-  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
-</body>
-</html>
+  <!-- Book Button -->
+  <div style="text-align: center; margin-top: 2rem;">
+    <ion-button expand="block" color="warning" style="
+      width: 100%; 
+      font-size: 1rem; 
+      font-weight: bold; 
+      border-radius: 8px;">
+      Book Now
+    </ion-button>
+  </div>
+</ion-content>

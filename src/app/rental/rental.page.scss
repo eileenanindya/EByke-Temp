@@ -1,0 +1,27 @@
+/* Container utama */
+.form-container {
+    padding: 20px;
+  }
+  
+  /* Semua item dalam kotak */
+  .custom-box {
+    border: 1px solid #ccc;
+    border-radius: 12px; /* Membulatkan sudut setiap kotak input */
+    margin-bottom: 15px; /* Memberi ruang antar kotak */
+  }
+  
+  /* Border radius untuk input dalam kotak */
+  .custom-input {
+    border-radius: 12px; /* Membulatkan sudut input */
+    padding: 5px 10px;
+  }
+  
+  /* Tombol dengan border-radius yang lebih menonjol */
+  .submit-btn {
+    border-radius: 20px; /* Membulatkan sudut tombol untuk tampilan menarik */
+    background-color: #f7b731; /* Warna emas menarik perhatian */
+    color: #ffffff;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
