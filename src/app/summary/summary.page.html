@@ -1,0 +1,53 @@
+<ion-content fullscreen="true">
+  <ion-header [translucent]="true" class="h-auto bg-cyan-400 flex no-shadow rounded-bottom">
+    <ion-title class="text-left text-2xl mt-36 mb-10 text-white font-light">
+      <br />
+      <span class="text-5xl text-wrap text-white font-semibold block mt-1">Review Summary</span>
+    </ion-title>
+  </ion-header>
+
+  <!-- Konten utama -->
+  <div class="ion-padding">
+    <!-- Section 1: Location -->
+    <div style="margin-bottom: 15px;">
+      <ion-icon name="ellipse" style="color: #17bbfc; font-size: 20px; margin-right: 10px; fill: #0b9ad3;"></ion-icon>
+      <ion-col>Your Location</ion-col>
+
+      <p style="color: rgb(0, 0, 0); font-size: 14px; margin-top: 40px;">
+        <ion-icon name="location" style="color: hsl(51, 100%, 70%); font-size: 20px; margin-right: 10px;"></ion-icon>
+        Jl. Mayjend Panjaitan No.75, Penanggungan, Kec. Klojen, Kota Malang, Jawa Timur.
+      </p>
+    </div>
+
+    <!-- Section 2: Order Details -->
+    <div>
+      <h2 style="margin-top: 20px;">Order Detail</h2>
+      <ion-row class="ion-justify-content-between">
+        <ion-col>Total distance</ion-col>
+        <ion-col>3.2 km</ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-between">
+        <ion-col>Taxes</ion-col>
+        <ion-col>Rp8.000,00</ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-between">
+        <ion-col>Total</ion-col>
+        <ion-col>Rp12.000,00</ion-col>
+      </ion-row>
+    </div>
+
+    <!-- Spacer -->
+    <div style="height: 20px;"></div>
+  </div>
+
+  <!-- Fixed Footer with Payment Button -->
+  
+  
+
+  <div class="flex justify-center">
+    <button class="w-full" style="background-color: hsl(51, 100%, 70%); hover:bg-yellow-500; color: #0b9ad3; font-medium py-2 flex justify-center items-center space-x-2; width: 160px; border-radius: 30px; height: 40px;">
+      <span>Payment</span>
+    </button>
+  </div>
+  
+</ion-content>
