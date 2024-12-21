@@ -38,7 +38,11 @@ const routes: Routes = [
   {
     path: 'mapsbaterai',
     loadChildren: () => import('./mapsbaterai/mapsbaterai.module').then( m => m.MapsbateraiPageModule)
+  },  {
+    path: 'mapsharga',
+    loadChildren: () => import('./mapsharga/mapsharga.module').then( m => m.MapshargaPageModule)
   },
+
 ];
 
 @NgModule({

@@ -1,32 +1,45 @@
-/* Container untuk mengatur tata letak */
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Spasi antar kotak */
-    padding: 10px; /* Padding untuk container */
-  }
-  
-  /* Gaya untuk setiap kotak */
-  .box {
-    background-color: #f0f0f0; /* Warna latar kotak */
-    border-radius: 15px; /* Border radius untuk sudut melengkung */
-    border: 1px solid #ccc; /* Border kotak */
-    padding: 20px; /* Ruang dalam kotak */
-    width: calc(25% - 20px); /* Ukuran kotak agar fleksibel */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan untuk estetika */
-    text-align: center; /* Pusatkan teks */
-    box-sizing: border-box; /* Pastikan padding tidak menambah ukuran */
-  }
-  
+
   /* Responsif untuk layar kecil */
   @media (max-width: 768px) {
     .box {
       width: calc(50% - 20px); /* Kotak lebih besar pada layar kecil */
     }
   }
-  
+
   @media (max-width: 480px) {
     .box {
       width: calc(100% - 20px); /* Kotak penuh pada layar sangat kecil */
     }
   }
+
+  .scrollable {
+    overflow-y: auto; /* Mengaktifkan scroll secara vertikal */
+    overflow-x: hidden; /* Menghindari scroll horizontal (opsional) */
+    max-height: 1000px; /* Atur tinggi maksimum elemen */
+    padding: 10px; /* Menambahkan padding untuk estetika */
+    border: 1px solid #fff; /* Opsional: memberi batas */
+    background-color: #68D2E8;
+    border-radius: 5px; /* Opsional: memberi sudut melengkung */
+  }
+
+  .container {
+    overflow: hidden; /* Agar konten scroll mengikuti bentuk border */
+    max-width: 600px; /* Batasi lebar kotak (opsional) */
+    margin: 20px auto; /* Pusatkan kotak (opsional) */
+  }
+
+  /* Gaya dasar untuk elemen */
+.hover-effect {
+  background-color: #fff; /* Warna latar awal */
+  border: 1px solid #fff; /* Border awal */
+  border-radius: 0px; /* Tidak ada border-radius awal */
+  transition: all 0.3s ease; /* Animasi saat hover */
+}
+
+/* Gaya saat elemen di-hover */
+.hover-effect:hover {
+  border-radius: 15px; /* Radius yang diinginkan saat hover */
+  background-color: #FDDE55; /* Warna latar saat hover */
+  border-color: #FDDE55; /* Warna border saat hover */
+}
+
