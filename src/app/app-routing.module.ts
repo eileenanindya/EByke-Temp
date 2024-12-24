@@ -40,6 +40,18 @@ const routes: Routes = [
     loadChildren: () => import('./mapsbaterai/mapsbaterai.module').then( m => m.MapsbateraiPageModule)
   },
   {
+    path: 'mapsharga',
+    loadChildren: () => import('./mapsharga/mapsharga.module').then( m => m.MapshargaPageModule)
+  },
+  {
+  path: 'reviewsummary',
+    loadChildren: () => import('./reviewsummary/reviewsummary.module').then( m => m.ReviewsummaryPageModule)
+  },
+  {
+    path: 'summary',
+    loadChildren: () => import('./summary/summary.module').then( m => m.SummaryPageModule)
+  },
+  {
     path: 'afterpayment',
     loadChildren: () => import('./afterpayment/afterpayment.module').then( m => m.AfterpaymentPageModule)
   },
@@ -55,4 +67,3 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
