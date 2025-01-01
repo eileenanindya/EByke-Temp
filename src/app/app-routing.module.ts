@@ -40,6 +40,10 @@ const routes: Routes = [
     loadChildren: () => import('./mapsbaterai/mapsbaterai.module').then( m => m.MapsbateraiPageModule)
   },
   {
+    path: 'mapsharga',
+    loadChildren: () => import('./mapsharga/mapsharga.module').then( m => m.MapshargaPageModule)
+  },
+  {
     path: 'reviewsummary',
     loadChildren: () => import('./reviewsummary/reviewsummary.module').then( m => m.ReviewsummaryPageModule)
   },
@@ -55,7 +59,8 @@ const routes: Routes = [
     path: 'historytransaksi',
     loadChildren: () => import('./historytransaksi/historytransaksi.module').then( m => m.HistorytransaksiPageModule)
   },
-]
+];
+
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
@@ -63,4 +68,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
