@@ -1,5 +1,17 @@
 <ion-content fullscreen="true">
   <ion-header [translucent]="true" class="h-auto bg-cyan-400 flex no-shadow rounded-bottom">
+
+      <button 
+      type="button" 
+      class="absolute top-4 left-4 inline-flex items-center text-white hover:underline"
+      style="padding: 8px 12px; width: auto; height: auto; border-radius: 8px; background-color: rgba(255, 255, 255, 0.2);"
+    >
+      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
+      </svg>
+      <!-- <span class="ml-2 text-sm">Back</span> -->
+    </button>
+
     <ion-title class="text-left text-2xl mt-36 mb-10 text-white font-light">
       <br />
       <span class="text-5xl text-wrap text-white font-semibold block mt-1">Review Summary</span>
@@ -36,18 +48,14 @@
       </ion-row>
     </div>
 
-    <!-- Spacer -->
     <div style="height: 20px;"></div>
   </div>
 
-  <!-- Fixed Footer with Payment Button -->
-  
-  
-
-  <div class="flex justify-center">
+  <div class="fixed bottom-4 left-1/2 transform -translate-x-1/2">
     <button class="w-full" style="background-color: hsl(51, 100%, 70%); hover:bg-yellow-500; color: #0b9ad3; font-medium py-2 flex justify-center items-center space-x-2; width: 160px; border-radius: 30px; height: 40px;">
       <span>Payment</span>
     </button>
-  </div>
+  </div> 
+  
   
 </ion-content>
