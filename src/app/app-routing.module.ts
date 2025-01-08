@@ -56,8 +56,20 @@ const routes: Routes = [
     loadChildren: () => import('./mapsharga/mapsharga.module').then( m => m.MapshargaPageModule)
   },
   {
-  path: 'reviewsummary',
+    path: 'reviewsummary',
     loadChildren: () => import('./reviewsummary/reviewsummary.module').then( m => m.ReviewsummaryPageModule)
+  },
+  {
+    path: 'summary',
+    loadChildren: () => import('./summary/summary.module').then( m => m.SummaryPageModule)
+  },
+  {
+    path: 'afterpayment',
+    loadChildren: () => import('./afterpayment/afterpayment.module').then( m => m.AfterpaymentPageModule)
+  },
+  {
+    path: 'historytransaksi',
+    loadChildren: () => import('./historytransaksi/historytransaksi.module').then( m => m.HistorytransaksiPageModule)
   },
   {
     path: 'summary/:transactionId',
@@ -81,3 +93,4 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule {}
+
