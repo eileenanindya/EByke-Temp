@@ -1,76 +1,164 @@
-<ion-content class="ion-padding">
+<ion-content [fullscreen]="true">
   <!-- Back Button -->
-  <button type="button" class="p-4 inline-flex font-medium items-center text-gray-800 hover:underline" style="margin-bottom: 1rem;">
+  <button type="button" [routerLink]="['/home']" class="p-4 pb-0 pt-8 inline-flex font-medium items-center text-gray-800 hover:underline" style="margin-bottom: 1rem;">
     <svg class="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
     </svg>
-    Back
+    Rent
   </button>
+  <div class="flex flex-col gap-4 p-4 ">
+    <!-- Header Title -->
+    
+    <img src="../../assets/icon/logo.png" alt="logo" class="logo-img">
 
-  <!-- Header Title -->
-  <div style="
-    font-size: 1.5rem; 
-    font-weight: bold; 
-    color: #22d3ee; 
-    margin-bottom: 1.5rem;">
-    E-Bike
-  </div>
+    <!-- Booking Form Section -->
+    <div>
+      <div style="font-weight: bold; margin-bottom: 1rem;">Booking Form</div>
 
-  <!-- Booking Form Section -->
-  <div style="margin-bottom: 2rem;">
-    <div style="font-weight: bold; margin-bottom: 1rem;">Booking Form</div>
+      <!-- <ion-item> -->
+        <ion-label position="stacked" style="color: #555;">Start Date</ion-label>
+        <!-- <ion-input type="date" placeholder="Select date"></ion-input> -->
+        <div class="mb-4 relative max-w-sm">
+          <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+            </svg>
+          </div>
+          <input id="start_date"
+          type="date"
+          [(ngModel)]="rentalData.start_date"
+          name="date"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Select start date">
+        </div>
 
-    <ion-item>
-      <ion-label position="stacked" style="color: #555;">Start Date</ion-label>
-      <ion-input type="date" placeholder="Select date"></ion-input>
-    </ion-item>
+      <!-- </ion-item> -->
 
-    <ion-item>
-      <ion-label position="stacked" style="color: #555;">End Date</ion-label>
-      <ion-input type="date" placeholder="Select date"></ion-input>
-    </ion-item>
+      <!-- <ion-item> -->
+        <ion-label position="stacked" style="color: #555;">End Date</ion-label>
+        <!-- <ion-input type="date" placeholder="Select date"></ion-input> -->
+        <div class="mb-4 relative max-w-sm">
+          <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+            </svg>
+          </div>
+          <input id="end_date"
+          type="date"
+          name="date"
+          [(ngModel)]="rentalData.end_date"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Select end date">
+        </div>
+      <!-- </ion-item> -->
 
-    <ion-item>
-      <ion-label position="stacked" style="color: #555;">Start Time</ion-label>
-      <ion-input type="time" placeholder="Select time"></ion-input>
-    </ion-item>
+      <!-- <ion-item> -->
+        <ion-label position="stacked" style="color: #555;">Start Time</ion-label>
+        <!-- <ion-input type="time" placeholder="Select time"></ion-input> -->
+         
+        <form class="mb-4 max-w-[8rem]">
+          <!-- <label for="time" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select time:</label> -->
+          <div class="relative">
+              <div class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
+                  <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                      <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"/>
+                  </svg>
+              </div>
+              <input type="time"
+              [(ngModel)]="rentalData.start_time"
+              name="time"
+              id="time"
+              class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              min="09:00" max="18:00"
+              required>
+          </div>
+        </form>
 
-    <ion-item>
-      <ion-label position="stacked" style="color: #555;">End Time</ion-label>
-      <ion-input type="time" placeholder="Select time"></ion-input>
-    </ion-item>
-  </div>
+      <!-- </ion-item> -->
 
-  <!-- Divider -->
-  <hr style="border-top: 1px solid #ddd; margin: 1.5rem 0;">
+      <!-- <ion-item> -->
+        <ion-label position="stacked" style="color: #555;">End Time</ion-label>
+        <!-- <ion-input type="time" placeholder="Select time"></ion-input> -->
+        <form class="mb-4 max-w-[8rem]">
+          <!-- <label for="time" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select time:</label> -->
+          <div class="relative">
+              <div class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
+                  <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                      <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"/>
+                  </svg>
+              </div>
+              <input type="time"
+              [(ngModel)]="rentalData.end_time"
+              name="time"
+              id="time"
+              class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              min="09:00" max="18:00"
+              required>
+          </div>
+        </form>
+    </div>
 
-  <!-- Pick Up Details Section -->
-  <div>
-    <div style="font-weight: bold; margin-bottom: 1rem;">Pick Up Details</div>
+    <!-- Divider -->
+    <hr style="border-top: 1px solid #ddd; margin: 0.8rem 0;">
 
-    <ion-item>
-      <ion-label position="stacked" style="color: #555;">Pick Up Time</ion-label>
-      <ion-input type="time" placeholder="Select time"></ion-input>
-    </ion-item>
+    <!-- Pick Up Details Section -->
+    <div>
+      <div style="font-weight: bold; margin-bottom: 1rem;">Pick Up Details</div>
 
-    <ion-item>
-      <ion-label position="stacked" style="color: #555;">Pick Up Location</ion-label>
-      <ion-select placeholder="Select location">
-        <ion-select-option value="location1">Location 1</ion-select-option>
-        <ion-select-option value="location2">Location 2</ion-select-option>
-        <ion-select-option value="location3">Location 3</ion-select-option>
+      <!-- <ion-item> -->
+        <!-- <ion-label position="stacked" style="color: #555;">Pick Up Time</ion-label> -->
+        <!-- <ion-input type="time" placeholder="Select time"></ion-input> -->
+        <!-- <form class="mb-4 max-w-[8rem]"> -->
+          <!-- <label for="time" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select time:</label> -->
+          <!-- <div class="relative">
+              <div class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
+                  <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                      <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"/>
+                  </svg>
+              </div>
+              <input type="time" id="time" class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" min="09:00" max="18:00" value="00:00" required />
+          </div>
+        </form> -->
+      <!-- </ion-item> -->
+
+      <!-- <ion-label position="stacked" style="color: #555;">Motor</ion-label>
+      <ion-select  [(ngModel)]="rentalData.motor_id" placeholder="Select location" name="branches">
+        <ion-select-option name="branches" *ngFor="let motor of motor" [value]="motor.id">
+          {{ motor.model }}
+        </ion-select-option>
+      </ion-select> -->
+      <ion-label position="stacked" style="color: #555;">Motor Model</ion-label>
+      <ion-select [(ngModel)]="rentalData.motor_id" placeholder="Select model" name="motors">
+        <ion-select-option name="motors" *ngFor="let motor of motors" [value]="motor.id">
+          {{ motor.model }}
+        </ion-select-option>
       </ion-select>
-    </ion-item>
-  </div>
+      <!-- <ion-item> -->
+        <ion-label position="stacked" style="color: #555;">Pick Up Location</ion-label>
+        <ion-select [(ngModel)]="rentalData.pickup_branch_id" placeholder="Select location" name="branches">
+          <ion-select-option name="branches" *ngFor="let branch of branches" [value]="branch.id">
+            {{ branch.branch_name }}
+          </ion-select-option>
+        </ion-select>
+        <ion-label position="stacked" style="color: #555;">Return Location</ion-label>
+        <ion-select [(ngModel)]="rentalData.return_branch_id" placeholder="Select location" name="branches">
+          <ion-select-option name="branches" *ngFor="let branch of branches" [value]="branch.id">
+            {{ branch.branch_name }}
+          </ion-select-option>
+        </ion-select>
+      <!-- </ion-item> -->
+    </div>
 
-  <!-- Book Button -->
-  <div style="text-align: center; margin-top: 2rem;">
-    <ion-button expand="block" color="warning" style="
-      width: 100%; 
-      font-size: 1rem; 
-      font-weight: bold; 
-      border-radius: 8px;">
-      Book Now
-    </ion-button>
+    <!-- Book Button -->
+    <!-- <div style="text-align: center; margin-top: 2rem;">
+      <ion-button expand="block" color="warning" style="
+        width: 100%; 
+        font-size: 1rem; 
+        font-weight: bold; 
+        border-radius: 8px;">
+        Book Now
+      </ion-button>
+    </div> -->
+    <button type="button" (click)="createRental()" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Book Now</button>
   </div>
 </ion-content>

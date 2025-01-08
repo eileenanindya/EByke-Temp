@@ -1,53 +1,89 @@
-<ion-content fullscreen="true">
+<ion-content [fullscreen]="true">
   <ion-header [translucent]="true" class="h-auto bg-cyan-400 flex no-shadow rounded-bottom">
     <ion-title class="text-left text-2xl mt-36 mb-10 text-white font-light">
-      <br />
-      <span class="text-5xl text-wrap text-white font-semibold block mt-1">Review Summary</span>
+      <span class="text-5xl text-wrap text-white font-semibold block mt-1">Rental Summary</span>
+      <span class="text-2xl text-wrap text-white font-light block mt-3">Review before you proceed!</span>
     </ion-title>
   </ion-header>
 
-  <!-- Konten utama -->
-  <div class="ion-padding">
-    <!-- Section 1: Location -->
-    <div style="margin-bottom: 15px;">
-      <ion-icon name="ellipse" style="color: #17bbfc; font-size: 20px; margin-right: 10px; fill: #0b9ad3;"></ion-icon>
-      <ion-col>Your Location</ion-col>
+  <!-- <pre *ngIf="transaction">{{ transaction | json }}</pre> -->
 
-      <p style="color: rgb(0, 0, 0); font-size: 14px; margin-top: 40px;">
-        <ion-icon name="location" style="color: hsl(51, 100%, 70%); font-size: 20px; margin-right: 10px;"></ion-icon>
-        Jl. Mayjend Panjaitan No.75, Penanggungan, Kec. Klojen, Kota Malang, Jawa Timur.
-      </p>
+  <div class="form" *ngIf="transaction">
+    <div class="max-w-sm mx-auto ion-padding">
+      <div class="flex justify-between items-end">
+        <div class="flex items-center gap-2">
+          <svg class="w-10 h-10 text-[#42bad5] dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"/>
+          </svg>
+          <div>
+            <h2 class="text-[#7B7B7B]">Start Date</h2>
+            <h1 class="text-gray-700">{{ transaction.rental.start_date }}</h1>
+          </div>
+        </div>
+        <h1 class="text-[20px] text-gray-700">{{ transaction.rental.start_time }}</h1>
+      </div>
+
+      <div class="flex justify-between items-end">
+        <div class="flex items-center gap-2 mt-3">
+          <svg class="w-10 h-10 text-[#42bad5] dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M5 5a1 1 0 0 0 1-1 1 1 0 1 1 2 0 1 1 0 0 0 1 1h1a1 1 0 0 0 1-1 1 1 0 1 1 2 0 1 1 0 0 0 1 1h1a1 1 0 0 0 1-1 1 1 0 1 1 2 0 1 1 0 0 0 1 1 2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a2 2 0 0 1 2-2ZM3 19v-7a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Zm6.01-6a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm2 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm6 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm-10 4a1 1 0 1 1 2 0 1 1 0 0 1-2 0Zm6 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0Zm2 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z" clip-rule="evenodd"/>
+          </svg>
+          
+          <div>
+            <h2 class="text-[#7B7B7B]">End Date</h2>
+            <h1 class="text-gray-700">{{ transaction.rental.end_date }}</h1>
+          </div>
+        </div>
+        <h1 class="text-[20px] text-gray-700">{{ transaction.rental.end_time }}</h1>
+      </div>
+
+      <div class="flex flex-col gap-2 mt-3">
+        <div>
+          <h2 class="text-[#7B7B7B]">Motor Model</h2>
+          <h1 class="text-gray-700">{{ getMotorModel(transaction.rental.motor_id) }}</h1>
+        </div>
+        <div>
+          <h2 class="text-[#7B7B7B]">Pick Up Location</h2>
+          <h1 class="text-gray-700">{{ getBranchName(transaction.rental.pickup_branch_id) }}</h1>
+        </div>
+        <div>
+          <h2 class="text-[#7B7B7B]">Return Location</h2>
+          <h1 class="text-gray-700">{{ getBranchName(transaction.rental.return_branch_id) }}</h1>
+        </div>
+      </div>
+      
+      <div class="mt-10">
+        <h1 class="mb-2 text-gray-700">Order Detail</h1>
+        <div class="flex justify-between mb-1">
+          <h2 class="text-[#5c5c5c]">Total duration</h2>
+          <h2 class="text-[#5c5c5c]">{{ transaction.rental.duration }} hour(s)</h2>
+        </div>
+        <div class="flex justify-between mb-1">
+          <h2 class="text-[#5c5c5c]">Fee/hour</h2>
+          <h2 class="text-[#5c5c5c]">Rp10.000</h2>
+        </div>
+        <div class="flex justify-between mt-2">
+          <h1 class="text-gray-700">Total</h1>
+          <h1 class="text-gray-700">{{ transaction.amount }}</h1>
+        </div>
+      </div>
+      <div class="absolute bottom-10 left-0 right-0 flex flex-col justify-center items-center space-y-4">
+        <button class="w-full font-medium py-2 flex justify-center items-center space-x-2" 
+        style="
+            background-color: hsl(51, 100%, 70%);
+            color: #0b9ad3;
+            width: 160px;
+            border-radius: 30px;
+            height: 40px;
+        ">
+          <span>Payment</span>
+        </button>
+
+        <p class="text-center text-gray-700 dark:text-white">Doesn't have an account? 
+          <a class="text-cyan-400 font-medium" [routerLink]="['/register']">Register</a>
+        </p>
+      </div>
     </div>
-
-    <!-- Section 2: Order Details -->
-    <div>
-      <h2 style="margin-top: 20px;">Order Detail</h2>
-      <ion-row class="ion-justify-content-between">
-        <ion-col>Total distance</ion-col>
-        <ion-col>3.2 km</ion-col>
-      </ion-row>
-      <ion-row class="ion-justify-content-between">
-        <ion-col>Taxes</ion-col>
-        <ion-col>Rp8.000,00</ion-col>
-      </ion-row>
-      <ion-row class="ion-justify-content-between">
-        <ion-col>Total</ion-col>
-        <ion-col>Rp12.000,00</ion-col>
-      </ion-row>
-    </div>
-
-    <!-- Spacer -->
-    <div style="height: 20px;"></div>
-  </div>
-
-  <!-- Fixed Footer with Payment Button -->
-  
-  
-
-  <div class="flex justify-center">
-    <button class="w-full" style="background-color: hsl(51, 100%, 70%); hover:bg-yellow-500; color: #0b9ad3; font-medium py-2 flex justify-center items-center space-x-2; width: 160px; border-radius: 30px; height: 40px;">
-      <span>Payment</span>
-    </button>
   </div>
   
 </ion-content>

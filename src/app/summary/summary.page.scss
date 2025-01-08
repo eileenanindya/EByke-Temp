@@ -1,4 +1,20 @@
+.no-shadow {
+  box-shadow: none !important;
+}
+
+.form{
+  padding-top: 25px;
+}
+
 .rounded-bottom {
-    border-bottom-left-radius: 20px; /* Adjust the radius as needed */
-    border-bottom-right-radius: 20px; /* Adjust the radius as needed */
-  }
+  border-bottom-left-radius: 20px; /* Adjust the radius as needed */
+  border-bottom-right-radius: 20px; /* Adjust the radius as needed */
+}
+
+h1{
+  font-weight: 600;
+}
+
+h2{
+  font-size: 14px;
+}

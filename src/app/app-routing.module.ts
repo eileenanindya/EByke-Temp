@@ -28,6 +28,18 @@ const routes: Routes = [
     loadChildren: () => import('./set-up-profile/set-up-profile.module').then( m => m.SetUpProfilePageModule)
   },
   {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'editprofile',
+    loadChildren: () => import('./editprofile/editprofile.module').then( m => m.EditprofilePageModule)
+  },
+  {
+    path: 'set-up-profile',
+    loadChildren: () => import('./set-up-profile/set-up-profile.module').then( m => m.SetUpProfilePageModule)
+  },
+  {
     path: 'rental',
     loadChildren: () => import('./rental/rental.module').then( m => m.RentalPageModule)
   },
@@ -48,7 +60,7 @@ const routes: Routes = [
     loadChildren: () => import('./reviewsummary/reviewsummary.module').then( m => m.ReviewsummaryPageModule)
   },
   {
-    path: 'summary',
+    path: 'summary/:transactionId',
     loadChildren: () => import('./summary/summary.module').then( m => m.SummaryPageModule)
   },
   {
@@ -67,3 +79,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
+
+export class AppRoutingModule {}
