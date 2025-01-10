@@ -22,7 +22,10 @@
       "es2018", 
       "dom"
     ],
-    "useDefineForClassFields": false
+    "useDefineForClassFields": false,
+    "resolveJsonModule": true,                 // Tambahkan ini
+    "esModuleInterop": true,                  // Tambahkan ini
+    "allowSyntheticDefaultImports": true      // Tambahkan ini
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
