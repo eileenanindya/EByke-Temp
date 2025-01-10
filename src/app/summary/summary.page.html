@@ -79,7 +79,7 @@
         </div>
       </div>
       <div class="absolute bottom-10 left-0 right-0 flex flex-col justify-center items-center space-y-4">
-        <button class="w-full font-medium py-2 flex justify-center items-center space-x-2" 
+        <button [routerLink] = "['/payment', transactionId]" class="w-full font-medium py-2 flex justify-center items-center space-x-2" 
         style="
             background-color: hsl(51, 100%, 70%);
             color: #0b9ad3;
@@ -89,10 +89,6 @@
         ">
           <span>Payment</span>
         </button>
-
-        <p class="text-center text-gray-700 dark:text-white">Doesn't have an account? 
-          <a class="text-cyan-400 font-medium" [routerLink]="['/register']">Register</a>
-        </p>
       </div>
     </div>
   </div>

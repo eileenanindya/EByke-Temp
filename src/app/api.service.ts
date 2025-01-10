@@ -25,6 +25,10 @@ export class ApiService {
     )
   }
 
+  getUserInfo(){
+    return this.get('user-info');
+  }
+
   // Ambil data profil user
   getUserProfile() {
     return this.get('profile');
@@ -73,7 +77,20 @@ export class ApiService {
     return this.get(`transaction/${transactionId}`);
   }
   
-  updatePaymentStatus(transactionId: string, status: string) {
-    return this.http.put(`/api/transaction/${transactionId}/payment-status`, { payment_status: status });
+  updatePaymentStatus(transactionId: number){
+    const body = {
+      transaction_id: transactionId, // Transaction ID sesuai validasi backend
+      payment_status: 'success',     // Payment status yang diupdate
+    };
+    
+    return this.post(`transaction/${transactionId}/payment-status`, body,);
+  }   
+
+  getUserTransactions(userId: number) {
+    return this.get(`user/${userId}/transactions`);
+  }  
+
+  updateRentStatus(rentalId: number) {
+    return this.post(`rental/${rentalId}/finish`, {});
   }
 }

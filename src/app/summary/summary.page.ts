@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Route, Router, ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
-import { Capacitor } from '@capacitor/core';
-import { CapacitorBarcodeScanner } from '@capacitor/barcode-scanner';
 
 @Component({
   selector: 'app-summary',
@@ -78,22 +76,5 @@ export class SummaryPage implements OnInit {
   getMotorModel(motorId: number): string {
     const motor = this.motors.find(m => m.id === motorId);
     return motor ? motor.model : 'Model Not Found';
-  }
-
-  goToPayment() {
-    this.navCtrl.navigateForward(`/payment/${this.transaction.id}`);
-  }
-
-  async startScan(val?: number){
-    try{
-      const result = CapacitorBarcodeScanner.scanBarcode({
-        hint: val || 17,
-        cameraDirection: 1
-      });
-      console.log(result);
-      return (await result).ScanResult
-    }catch(e){
-      throw(e);
-    }
   }
 }   

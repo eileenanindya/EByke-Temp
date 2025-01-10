@@ -1,0 +1,49 @@
+.scanner-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;  /* Lebar penuh layar */
+    height: 100vh; /* Tinggi penuh layar */
+    // background-color: rgb(255, 255, 255);
+    background-color: #22d3ee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;  /* Pastikan tetap di depan */
+  }
+
+  ::ng-deep .title{
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    color: #fff;
+    flex-direction: column;
+  }
+
+  ::ng-deep .title{
+    // z-index: 9;
+    font-size: 30px;   
+    font-weight: 600;
+  }
+
+  ::ng-deep .title h2{
+    // z-index: 9;
+    font-size: 20px;
+    margin-top: 1rem;
+    font-weight: 400;
+  }
+  
+  
+  zxing-scanner {
+    width: 90%;
+    // height: 100%;
+    border-radius: 20px;
+    object-fit: cover;  /* Menjaga agar kamera tetap proporsional */
+  }
+  
+  ::ng-deep zxing-scanner video {
+    border-radius: 20px;
+  }

@@ -1,45 +1,53 @@
 
   /* Responsif untuk layar kecil */
-  @media (max-width: 768px) {
-    .box {
-      width: calc(50% - 20px); /* Kotak lebih besar pada layar kecil */
-    }
-  }
+//   @media (max-width: 768px) {
+//     .box {
+//       width: calc(50% - 20px); /* Kotak lebih besar pada layar kecil */
+//     }
+//   }
 
-  @media (max-width: 480px) {
-    .box {
-      width: calc(100% - 20px); /* Kotak penuh pada layar sangat kecil */
-    }
-  }
+//   @media (max-width: 480px) {
+//     .box {
+//       width: calc(100% - 20px); /* Kotak penuh pada layar sangat kecil */
+//     }
+//   }
 
-  .scrollable {
-    overflow-y: auto; /* Mengaktifkan scroll secara vertikal */
-    overflow-x: hidden; /* Menghindari scroll horizontal (opsional) */
-    max-height: 1000px; /* Atur tinggi maksimum elemen */
-    padding: 10px; /* Menambahkan padding untuk estetika */
-    border: 1px solid #fff; /* Opsional: memberi batas */
-    background-color: #68D2E8;
-    border-radius: 5px; /* Opsional: memberi sudut melengkung */
-  }
+//   .scrollable {
+//     overflow-y: auto; /* Mengaktifkan scroll secara vertikal */
+//     overflow-x: hidden; /* Menghindari scroll horizontal (opsional) */
+//     max-height: 1000px; /* Atur tinggi maksimum elemen */
+//     padding: 10px; /* Menambahkan padding untuk estetika */
+//     border: 1px solid #fff; /* Opsional: memberi batas */
+//     background-color: #68D2E8;
+//     border-radius: 5px; /* Opsional: memberi sudut melengkung */
+//   }
 
-  .container {
-    overflow: hidden; /* Agar konten scroll mengikuti bentuk border */
-    max-width: 600px; /* Batasi lebar kotak (opsional) */
-    margin: 20px auto; /* Pusatkan kotak (opsional) */
-  }
+//   .container {
+//     overflow: hidden; /* Agar konten scroll mengikuti bentuk border */
+//     max-width: 600px; /* Batasi lebar kotak (opsional) */
+//     // margin: 20px auto; 
+//   }
 
-  /* Gaya dasar untuk elemen */
-.hover-effect {
-  background-color: #fff; /* Warna latar awal */
-  border: 1px solid #fff; /* Border awal */
-  border-radius: 0px; /* Tidak ada border-radius awal */
-  transition: all 0.3s ease; /* Animasi saat hover */
-}
+//   /* Gaya dasar untuk elemen */
+// .hover-effect {
+//   background-color: #fff; /* Warna latar awal */
+//   border: 1px solid #fff; /* Border awal */
+//   border-radius: 0px; /* Tidak ada border-radius awal */
+//   transition: all 0.3s ease; /* Animasi saat hover */
+// }
 
-/* Gaya saat elemen di-hover */
-.hover-effect:hover {
-  border-radius: 15px; /* Radius yang diinginkan saat hover */
-  background-color: #FDDE55; /* Warna latar saat hover */
-  border-color: #FDDE55; /* Warna border saat hover */
+// /* Gaya saat elemen di-hover */
+// .hover-effect:hover {
+//   border-radius: 15px; /* Radius yang diinginkan saat hover */
+//   background-color: #FDDE55; /* Warna latar saat hover */
+//   border-color: #FDDE55; /* Warna border saat hover */
+// }
+
+.container{
+  width: 100vw;
+  background-color: #3ec4d8;
+  display: flex;
+  flex-direction: column;
+
 }
 

@@ -83,6 +83,20 @@ const routes: Routes = [
     path: 'historytransaksi',
     loadChildren: () => import('./historytransaksi/historytransaksi.module').then( m => m.HistorytransaksiPageModule)
   },
+  {
+    path: 'payment/:transactionId',
+    loadChildren: () => import('./payment/payment.module').then( m => m.PaymentPageModule)
+  },
+  {
+    path: 'payment-success',
+    loadChildren: () => import('./payment-success/payment-success.module').then( m => m.PaymentSuccessPageModule)
+  },
+  {
+    path: 'activities-detail/:transactionId',
+    loadChildren: () => import('./activities-detail/activities-detail.module').then( m => m.ActivitiesDetailPageModule)
+  },
+
+
 ]
 
 @NgModule({

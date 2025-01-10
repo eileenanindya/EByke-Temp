@@ -1,0 +1,33 @@
+<ion-content [fullscreen]="true">
+  <div class="title">
+    <h1>Scan QR Code</h1>
+    <h2>Scan to Pay</h2>
+  </div>
+
+  <div class="scanner-sheel" [hidden]="!hasDevices">
+    <!-- <header>
+      <select (change)="onDeviceSelectChange($event)">
+        <option value="" [selected]="!currentDevice">No Device Selected</option>
+        <option *ngFor="let device of availableDevices" [value]="device.deviceId" [selected]="currentDevice && device.deviceId === currentDevice.deviceId">{{ device.label }}</option>
+      </select>
+    </header> -->
+
+    
+
+    <div class="scanner-container">
+      <zxing-scanner 
+        #scanner 
+        start="true" 
+        [device]="currentDevice" 
+        (scanSuccess)="handleQrCodeResult($event)" 
+        [formats]="formats">
+      </zxing-scanner>
+    </div>
+    
+
+    <!-- <section class="results" *ngIf="qrResultString">
+      <small>Result</small>
+      <strong>{{ qrResultString }}</strong>
+    </section> -->
+  </div>
+</ion-content>
