@@ -26,13 +26,27 @@ export class ProfilePage implements OnInit {
   loadProfile() {
     this.api.get('profile').subscribe(
       (response: any) => {
-        console.log('Response:', response); // Debug response
+        console.log('Response:', response);
         if (response.success) {
-          this.data = response.data; // Ambil data dari respons
+          this.data = response.data;
         }
       },
       (error) => {
         console.error('Error fetching profile:', error);
+      }
+    );
+  }
+
+  doLogout() {
+    this.api.logout().subscribe(
+      (response: any) => {
+        console.log('Logout successful:', response);
+
+        // Redirect to login page
+        this.router.navigateByUrl('/login');
+      },
+      (error: any) => {
+        console.error('Error during logout:', error);
       }
     );
   }

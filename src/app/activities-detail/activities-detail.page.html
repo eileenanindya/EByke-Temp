@@ -1,6 +1,4 @@
 <ion-content [fullscreen]="true">
-
-  <!-- Back Button -->
   <button type="button" [routerLink]="['/activities']" class="p-4 pb-0 pt-8 inline-flex font-medium items-center text-gray-800 hover:underline" style="margin-bottom: 1rem;">
     <svg class="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
@@ -50,7 +48,7 @@
       <div style="font-weight: bold; margin-bottom: 0.5rem; color: #333;">Rental Detail</div>
       <div style="font-size: 0.9rem; color: #555;">
         <p><strong>Start From:</strong>  {{ rentals.start_date | date:'d MMMM yyyy' }} {{ rentals.start_time ? rentals.start_time.substring(0, 5) : '' }}</p>
-        <p><strong>Finish:</strong> {{ rentals.end_date | date:'d MMMM yyyy' }} {{ rentals.start_time ? rentals.start_time.substring(0, 5) : '' }}</p>
+        <p><strong>Finish:</strong> {{ rentals.end_date | date:'d MMMM yyyy' }} {{ rentals.end_time ? rentals.end_time.substring(0, 5) : '' }}</p>
         <p><strong>Pick Up Location:</strong> {{ getBranchName(transaction.rental.pickup_branch_id) }}</p>
         <p><strong>Return Location:</strong> {{ getBranchName(transaction.rental.return_branch_id) }}</p>
         <p><strong>Status:</strong> {{ rentals.status }}</p>
@@ -61,7 +59,7 @@
     <div style="margin-bottom: 2rem;">
       <div style="font-weight: bold; margin-bottom: 0.5rem; color: #333;">Payment Detail</div>
       <div style="font-size: 0.9rem; color: #555;">
-        <p>Trip cost <span style="float: right;">{{ rentals.duration }} hour(s)</span></p>
+        <p>Duration <span style="float: right;">{{ rentals.duration }} hour(s)</span></p>
         <p>Trip cost <span style="float: right;">Rp{{ transaction.amount }}</span></p>
         <p>Voucher discount <span style="float: right;">Rp0.00</span></p>
         <hr style="border-top: 1px solid #ddd; margin: 0.5rem 0;">
@@ -82,7 +80,4 @@
       </button>
     </div>
   </div>
-
-  
-
 </ion-content>

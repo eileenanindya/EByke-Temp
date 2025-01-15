@@ -25,6 +25,7 @@ export class RentalPage implements OnInit {
   };
   branches: any[] = [];
   motors: any[] = [];
+  // isSubmitting: boolean = false;
 
   constructor(public api: ApiService, public router:Router, private navCtrl: NavController) { }
 
@@ -46,8 +47,9 @@ export class RentalPage implements OnInit {
   async loadMotors() {
     try {
       const response: any = await this.api.getMotor().toPromise();
-      console.log('Motors response:', response); // Debug response
-      this.motors = response;
+      // console.log('Motors response:', response); // Debug response
+      this.motors = response.filter((motor: any) => motor.status === 'available');
+      console.log('Motors response:', this.motors);
     } catch (error) {
       console.error('Error fetching motors:', error);
     }
@@ -71,16 +73,15 @@ export class RentalPage implements OnInit {
         branch => branch.branch_name.toLowerCase().trim() === this.rentalData.return_branch_id.toLowerCase().trim()
       )?.branch_id || '';
 
-      console.log('Rental Data:', this.rentalData);  // Pastikan user_id sudah ada di rentalData
-  
-      // Setelah set user_id, baru panggil createRental
+      console.log('Rental Data:', this.rentalData);
+
       this.api.createRental(this.rentalData).subscribe(
         (response: any) => {
           console.log('Rental created:', response);
           this.getRentals();
 
           const transactionData = {
-            rental_id: response.id,
+            rental_id: response.rental.id,
             user_id: this.rentalData.user_id,
             payment_method: 'e-wallet', // Default method, bisa diubah
             amount: this.rentalData.total_cost,
@@ -90,18 +91,18 @@ export class RentalPage implements OnInit {
           this.api.createTransaction(transactionData).subscribe(
             (transactionResponse: any) => {
               console.log('Transaction created:', transactionResponse);
+              // this.isSubmitting = false;
               this.router.navigateByUrl(`/summary/${transactionData.rental_id}`);
-             
             },
             (error: any) => {
               console.error('Error creating transaction:', error);
+              // this.isSubmitting = false;
             }
           );
-          // console.log('Transaction created:', transactionData);
-          // this.router.navigateByUrl(`/summary/${transactionData.rental_id}`)
         },
         (error: any) => {
           console.error('Error creating rental:', error);
+          // this.isSubmitting = false;
           console.log('Error details:', error.error);
         }
       );

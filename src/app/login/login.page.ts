@@ -37,9 +37,4 @@ export class LoginPage implements OnInit {
     }
     )
   }
-
-  doLogout(){
-    localStorage.removeItem('userToken')
-  }
-
 }

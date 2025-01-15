@@ -24,20 +24,12 @@ const routes: Routes = [
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
   {
-    path: 'set-up-profile',
-    loadChildren: () => import('./set-up-profile/set-up-profile.module').then( m => m.SetUpProfilePageModule)
-  },
-  {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
   {
     path: 'editprofile',
     loadChildren: () => import('./editprofile/editprofile.module').then( m => m.EditprofilePageModule)
-  },
-  {
-    path: 'set-up-profile',
-    loadChildren: () => import('./set-up-profile/set-up-profile.module').then( m => m.SetUpProfilePageModule)
   },
   {
     path: 'rental',
@@ -56,32 +48,12 @@ const routes: Routes = [
     loadChildren: () => import('./mapsharga/mapsharga.module').then( m => m.MapshargaPageModule)
   },
   {
-    path: 'reviewsummary',
-    loadChildren: () => import('./reviewsummary/reviewsummary.module').then( m => m.ReviewsummaryPageModule)
-  },
-  {
     path: 'summary',
     loadChildren: () => import('./summary/summary.module').then( m => m.SummaryPageModule)
   },
   {
-    path: 'afterpayment',
-    loadChildren: () => import('./afterpayment/afterpayment.module').then( m => m.AfterpaymentPageModule)
-  },
-  {
-    path: 'historytransaksi',
-    loadChildren: () => import('./historytransaksi/historytransaksi.module').then( m => m.HistorytransaksiPageModule)
-  },
-  {
     path: 'summary/:transactionId',
     loadChildren: () => import('./summary/summary.module').then( m => m.SummaryPageModule)
-  },
-  {
-    path: 'afterpayment',
-    loadChildren: () => import('./afterpayment/afterpayment.module').then( m => m.AfterpaymentPageModule)
-  },
-  {
-    path: 'historytransaksi',
-    loadChildren: () => import('./historytransaksi/historytransaksi.module').then( m => m.HistorytransaksiPageModule)
   },
   {
     path: 'payment/:transactionId',
@@ -95,8 +67,10 @@ const routes: Routes = [
     path: 'activities-detail/:transactionId',
     loadChildren: () => import('./activities-detail/activities-detail.module').then( m => m.ActivitiesDetailPageModule)
   },
-
-
+  {
+    path: 'developer-profile',
+    loadChildren: () => import('./developer-profile/developer-profile.module').then( m => m.DeveloperProfilePageModule)
+  },
 ]
 
 @NgModule({

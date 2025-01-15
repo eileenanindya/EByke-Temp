@@ -31,5 +31,17 @@
         <div class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400  -translate-y-6 scale-75 top-3 -z-10 origin-[0]">Address</div>
         <div class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600">{{ data.address || 'Not set' }}</div>
       </div>
+      <div class="absolute bottom-10 left-0 right-0 flex flex-col justify-center items-center space-y-4">
+        <button (click)="doLogout()" class="w-full font-medium py-2 flex justify-center items-center space-x-2" 
+        style="
+            background-color: #ffe866;
+            color: #0b9ad3;
+            width: 160px;
+            border-radius: 30px;
+            height: 40px;
+        ">
+          <span>Log out</span>
+        </button>
+      </div>
     </div>
 </ion-content>

@@ -14,10 +14,13 @@ export class HomePage {
   resp: any;
   userToken: any;
   imageSrc: any  = "assets/imgs/pp.jpg"
+  userName: string = '';
+  userLocation: string= '';
   constructor(private api: ApiService, public router: Router) { }
 
   ngOnInit() {
-    this.userToken = localStorage.getItem('userToken')
+    this.userToken = localStorage.getItem('userToken');
+    this.getUserProfile();
   }
   async takePicture() {
     const image = await Camera.getPhoto({
@@ -25,16 +28,24 @@ export class HomePage {
       allowEditing: true,
       resultType: CameraResultType.DataUrl
     });
-  
-    // image.webPath will contain a path that can be set as an image src.
-    // You can access the original file using image.path, which can be
-    // passed to the Filesystem API to read the raw data of the image,
-    // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
+
     var imageUrl = image.dataUrl;
   
     // Can be set to the src of an image now
     this.imageSrc = imageUrl;
   };
 
-
+  getUserProfile() {
+    this.api.getUserProfile().subscribe(
+      (response: any) => {
+        this.userName = response.data.name;
+        this.userLocation = response.data.address;
+        console.log('User Profile:', response);
+        console.log('User name:', this.userName);
+      },
+      (error: any) => {
+        console.error('Error fetching user profile:', error);
+      }
+    );
+  }
 }

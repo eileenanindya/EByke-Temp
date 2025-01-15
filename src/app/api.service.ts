@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { tap } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -12,29 +13,39 @@ export class ApiService {
   }
 
   post(url:any, data:any){
-    const token = localStorage.getItem('userToken') || '';  
+    // const token = localStorage.getItem('userToken') || '';  
     return this.http.post(this.baseUrl+url,data,
       { headers: new HttpHeaders({'Authorization': 'Bearer ' + this.token})}
     )
   }
 
   get(url:any){
-    const token = localStorage.getItem('userToken') || '';
+    // const token = localStorage.getItem('userToken') || '';
     return this.http.get(this.baseUrl+url,
       { headers: new HttpHeaders({'Authorization': 'Bearer ' + this.token})}
     )
+  }
+
+  logout() {
+    const token = localStorage.getItem('userToken') || '';
+
+    return this.http.post(this.baseUrl + 'logout', {}, {
+      headers: new HttpHeaders({ 'Authorization': 'Bearer ' + token })
+    }).pipe(
+      tap(() => {
+        localStorage.removeItem('userToken');
+      })
+    );
   }
 
   getUserInfo(){
     return this.get('user-info');
   }
 
-  // Ambil data profil user
   getUserProfile() {
     return this.get('profile');
   }
 
-  // Update data profil user
   updateUserProfile(data: any) {
     return this.post('profile/update', data);
   }
@@ -92,5 +103,8 @@ export class ApiService {
 
   updateRentStatus(rentalId: number) {
     return this.post(`rental/${rentalId}/finish`, {});
+  }
+  getBatteryStations(){
+    return this.get('battery-stations');
   }
 }
